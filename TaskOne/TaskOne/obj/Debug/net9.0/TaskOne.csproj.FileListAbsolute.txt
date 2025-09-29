@@ -1,0 +1,14 @@
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\bin\Debug\net9.0\TaskOne.exe
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\bin\Debug\net9.0\TaskOne.deps.json
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\bin\Debug\net9.0\TaskOne.runtimeconfig.json
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\bin\Debug\net9.0\TaskOne.dll
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\bin\Debug\net9.0\TaskOne.pdb
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.GeneratedMSBuildEditorConfig.editorconfig
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.AssemblyInfoInputs.cache
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.AssemblyInfo.cs
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.csproj.CoreCompileInputs.cache
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.dll
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\refint\TaskOne.dll
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.pdb
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\TaskOne.genruntimeconfig.cache
+D:\eraaSoft_dotNet_training\TaskOne\TaskOne\obj\Debug\net9.0\ref\TaskOne.dll
