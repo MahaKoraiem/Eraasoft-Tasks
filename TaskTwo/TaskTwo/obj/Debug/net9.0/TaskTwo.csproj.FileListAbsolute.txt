@@ -1,0 +1,14 @@
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\bin\Debug\net9.0\TaskTwo.exe
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\bin\Debug\net9.0\TaskTwo.deps.json
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\bin\Debug\net9.0\TaskTwo.runtimeconfig.json
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\bin\Debug\net9.0\TaskTwo.dll
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\bin\Debug\net9.0\TaskTwo.pdb
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.GeneratedMSBuildEditorConfig.editorconfig
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.AssemblyInfoInputs.cache
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.AssemblyInfo.cs
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.csproj.CoreCompileInputs.cache
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.dll
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\refint\TaskTwo.dll
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.pdb
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\TaskTwo.genruntimeconfig.cache
+D:\eraaSoft_dotNet_training\TaskTwo\TaskTwo\obj\Debug\net9.0\ref\TaskTwo.dll
