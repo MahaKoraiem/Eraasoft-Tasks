@@ -1,0 +1,14 @@
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\bin\Debug\net9.0\StudentManagment.exe
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\bin\Debug\net9.0\StudentManagment.deps.json
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\bin\Debug\net9.0\StudentManagment.runtimeconfig.json
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\bin\Debug\net9.0\StudentManagment.dll
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\bin\Debug\net9.0\StudentManagment.pdb
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.GeneratedMSBuildEditorConfig.editorconfig
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.AssemblyInfoInputs.cache
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.AssemblyInfo.cs
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.csproj.CoreCompileInputs.cache
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.dll
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\refint\StudentManagment.dll
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.pdb
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\StudentManagment.genruntimeconfig.cache
+D:\eraaSoft_dotNet_training\StudentManagment\StudentManagment\obj\Debug\net9.0\ref\StudentManagment.dll
