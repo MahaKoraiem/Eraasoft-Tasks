@@ -1,0 +1,14 @@
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\bin\Debug\net9.0\ExamSystem.exe
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\bin\Debug\net9.0\ExamSystem.deps.json
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\bin\Debug\net9.0\ExamSystem.runtimeconfig.json
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\bin\Debug\net9.0\ExamSystem.dll
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\bin\Debug\net9.0\ExamSystem.pdb
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.AssemblyInfoInputs.cache
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.AssemblyInfo.cs
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.csproj.CoreCompileInputs.cache
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.dll
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\refint\ExamSystem.dll
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.pdb
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ExamSystem.genruntimeconfig.cache
+D:\eraaSoft_dotNet_training\ExamSystem\ExamSystem\obj\Debug\net9.0\ref\ExamSystem.dll
