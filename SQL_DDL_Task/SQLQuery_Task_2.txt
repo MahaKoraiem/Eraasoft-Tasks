@@ -1,0 +1,68 @@
+CREATE TABLE Actor
+(
+	act_id INT PRIMARY KEY IDENTITY,
+	act_fname VARCHAR(20),
+	act_lname VARCHAR(20),
+	act_gender CHAR (1)
+);
+
+CREATE TABLE Director
+(
+	dir_id INT PRIMARY KEY IDENTITY,
+	dir_fname VARCHAR(20),
+	dir_lname VARCHAR(20)
+);
+
+CREATE TABLE Genres
+(
+	gen_id INT PRIMARY KEY IDENTITY,
+	gen_title VARCHAR(20)
+);
+
+CREATE TABLE Movie
+(
+	mov_id INT PRIMARY KEY IDENTITY,
+	mov_title VARCHAR(50),
+	mov_year INT,
+	mov_time TIME,
+	mov_lang VARCHAR(50),
+	mov_dt_rel DATE,
+	mov_rel_country VARCHAR(5)
+);
+
+CREATE TABLE Reviewer
+(
+	rev_id INT PRIMARY KEY IDENTITY,
+	rev_name VARCHAR(30)
+);
+
+CREATE TABLE movie_cast
+(
+	act_id INT REFERENCES Actor(act_id),
+	mov_id INT REFERENCES Movie(mov_id),
+	PRIMARY KEY (act_id, mov_id),
+	role VARCHAR(30)
+);
+
+CREATE TABLE movie_direction
+(
+	dir_id INT REFERENCES Director(dir_id),
+	mov_id INT REFERENCES Movie(mov_id),
+	PRIMARY KEY(dir_id, mov_id)
+);
+
+CREATE TABLE movie_genre
+(
+	mov_id INT REFERENCES Movie(mov_id),
+	gen_id INT REFERENCES Genres(gen_id),
+	PRIMARY KEY (mov_id, gen_id)
+);
+
+CREATE TABLE rating
+(
+	mov_id INT REFERENCES Movie(mov_id),
+	rev_id INT REFERENCES Reviewer(rev_id),
+	PRIMARY KEY (mov_id, rev_id),
+	rev_stars INT,
+	num_o_ratings INT
+);
