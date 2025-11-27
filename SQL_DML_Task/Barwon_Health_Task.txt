@@ -1,0 +1,55 @@
+CREATE DATABASE Barwon_Health;
+GO
+
+CREATE TABLE Doctors
+(
+	ID INT PRIMARY KEY IDENTITY,
+	Name VARCHAR(100) NOT NULL,
+	Specialty VARCHAR(100) NOT NULL,
+	Years_Of_Experience INT NOT NULL,
+	Email VARCHAR(100) NOT NULL,
+	Phone VARCHAR(20) NOT NULL
+);
+GO
+
+CREATE TABLE Patients
+(
+	UR_Number INT PRIMARY KEY IDENTITY,
+	Name VARCHAR(100) NOT NULL,
+	Medicare_Card_Number VARCHAR(20),
+	Age INT NOT NULL,
+	Phone VARCHAR(20) NOT NULL,
+	Address VARCHAR(100),
+	Email VARCHAR(50),
+	Doctor_Id Int REFERENCES Doctors(ID)
+);
+GO
+
+CREATE TABLE Pharmaceutical_Companies
+(
+	Id INT PRIMARY KEY IDENTITY,
+	Name VARCHAR(100) NOT NULL,
+	Address VARCHAR(100) NOT NULL,
+	Phone VARCHAR(20) NOT NULL
+
+);
+
+CREATE TABLE Drugs
+(
+	Id INT PRIMARY KEY IDENTITY,
+	Trade_Name VARCHAR(100) NOT NULL,
+	Strength VARCHAR(50) NOT NULL,
+	Company_Id INT REFERENCES Pharmaceutical_Companies(Id)	ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Prescriptions
+(
+	Prescription_Id INT PRIMARY KEY IDENTITY,
+	Patient_UR_Number Int REFERENCES Patients(UR_Number),
+	Doctor_Id Int REFERENCES Doctors(ID),
+	Drug_Id Int REFERENCES Drugs(Id),
+	Quantity INT NOT NULL,
+	Date Date NOT NULL
+);
+GO

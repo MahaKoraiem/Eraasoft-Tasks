@@ -1,0 +1,167 @@
+USE Barwon_Health;
+GO
+---------------------------------------------------------------------------------
+--1. SELECT: Retrieve all columns from the Doctor table.
+SELECT * FROM Doctors;
+GO
+---------------------------------------------------------------------------------
+--2. ORDER BY: List patients in the Patient table in ascending order of their ages.
+SELECT * FROM Patients ORDER BY Age ASC;
+GO
+---------------------------------------------------------------------------------
+--3. OFFSET FETCH: Retrieve the first 10 patients from the Patient table, starting from the 5th record.
+SELECT * FROM Patients ORDER BY UR_Number OFFSET 4 ROWS FETCH NEXT 10 ROWS ONLY;
+GO
+---------------------------------------------------------------------------------
+--4. SELECT TOP: Retrieve the top 5 doctors from the Doctor table.
+SELECT TOP 5 * FROM Doctors;
+GO
+---------------------------------------------------------------------------------
+--5. SELECT DISTINCT: Get a list of unique address from the Patient table.
+SELECT DISTINCT Address FROM Patients;
+GO
+---------------------------------------------------------------------------------
+--6. WHERE: Retrieve patients from the Patient table who are aged 25.
+SELECT * FROM Patients WHERE Age = 25;
+GO
+---------------------------------------------------------------------------------
+--7. NULL: Retrieve patients from the Patient table whose email is not provided.
+SELECT * FROM Patients WHERE Email IS NULL;
+GO
+---------------------------------------------------------------------------------
+--8. AND: Retrieve doctors from the Doctor table who have experience greater than 5 years and specialize in 'Cardiology'.
+SELECT * FROM Doctors WHERE Years_Of_Experience > 5 AND Specialty = 'Cardiology';
+GO
+---------------------------------------------------------------------------------
+--9. IN: Retrieve doctors from the Doctor table whose speciality is either 'Dermatology' or 'Oncology'.
+SELECT * FROM Doctors WHERE Specialty IN('Dermatology','Oncology');
+GO
+---------------------------------------------------------------------------------
+--10. BETWEEN: Retrieve patients from the Patient table whose ages are between 18 and 30.
+SELECT * FROM Patients WHERE Age BETWEEN 18 AND 30;
+GO
+---------------------------------------------------------------------------------
+--11.LIKE: Retrieve doctors from the Doctor table whose names start with 'Dr.'.
+SELECT * FROM Doctors WHERE Name LIKE 'Dr.%';
+GO
+---------------------------------------------------------------------------------
+--12. Column & Table Aliases: Select the name and email of doctors, aliasing them as 'DoctorName' and 'DoctorEmail'.
+SELECT Name AS DoctorName, Email AS DoctorEmail FROM Doctors;
+GO
+---------------------------------------------------------------------------------
+--13. Joins: Retrieve all prescriptions with corresponding patient names.
+SELECT pr.*, p.Name FROM Prescriptions pr JOIN Patients p
+ON Pr.Patient_UR_Number = P.UR_Number;
+GO
+---------------------------------------------------------------------------------
+--14. GROUP BY: Retrieve the count of patients grouped by their cities.
+SELECT Address, COUNT(*) AS PatientsPerAddress FROM Patients GROUP BY Address;
+GO
+---------------------------------------------------------------------------------
+--15. HAVING: Retrieve cities with more than 3 patients.
+SELECT Address, COUNT(*) AS PatientsPerAddress FROM Patients GROUP BY Address
+HAVING COUNT(*) > 3;
+GO
+---------------------------------------------------------------------------------
+--16. GROUPING SETS: Retrieve counts of patients grouped by cities and ages.
+SELECT Address, Age, COUNT(*) AS PatientsCount FROM Patients
+GROUP BY GROUPING SETS (
+	(Address),
+	(Age),
+	()
+);
+GO
+---------------------------------------------------------------------------------
+--17. CUBE: Retrieve counts of patients considering all possible combinations of Address and age.
+SELECT Address, Age, COUNT(*) AS PatientsCount FROM Patients GROUP BY CUBE(Address, Age);
+GO
+---------------------------------------------------------------------------------
+--18. ROLLUP: Retrieve counts of patients rolled up by Address.
+SELECT Address, Age, COUNT(*) AS PatientsCount FROM Patients GROUP BY ROLLUP(Address, Age);
+GO
+---------------------------------------------------------------------------------
+--19. EXISTS: Retrieve patients who have at least one prescription.
+SELECT * FROM Patients p WHERE EXISTS(
+	SELECT 1 FROM Prescriptions pr
+	WHERE pr.Patient_UR_Number = p.UR_Number
+);
+GO
+---------------------------------------------------------------------------------
+--20. UNION: Retrieve a combined list of doctors and patients.
+SELECT Name, 'Doctor' AS Type FROM Doctors
+UNION
+SELECT Name, 'Patient' AS Type FROM Patients;
+GO
+---------------------------------------------------------------------------------
+--21. Common Table Expression (CTE): Retrieve patients along with their doctors using a CTE.
+WITH PatientDoctor_CTE AS (
+    SELECT P.Name AS PatientName, D.Name AS DoctorName
+    FROM Patients P
+    JOIN Doctors D ON P.Doctor_Id = D.ID
+)
+SELECT * FROM PatientDoctor_CTE;
+GO
+---------------------------------------------------------------------------------
+--22. INSERT: Insert a new doctor into the Doctor table.
+INSERT INTO Doctors (Name, Specialty, Years_Of_Experience, Email, Phone) VALUES ('Dr. Maha', 'Pediatrics', 8, 'maha@hospital.com', '0400111222');
+GO
+---------------------------------------------------------------------------------
+--23. INSERT Multiple Rows: Insert multiple patients into the Patient table.
+INSERT INTO Patients (Name, Age, Address, Phone, Doctor_Id)
+VALUES 
+('Ibrahim', 30, 'Giza', '0411111111', 1),
+('Ahmed', 28, 'Cairo', '0422222222', 1);
+GO
+---------------------------------------------------------------------------------
+--24. UPDATE: Update the phone number of a doctor.
+UPDATE Doctors SET Phone = '0200110200' WHERE ID = 3;
+GO
+---------------------------------------------------------------------------------
+--25. UPDATE JOIN: Update the Address of patients who have a prescription from a specific doctor.
+UPDATE P
+SET P.Address = 'Giza'
+FROM Patients P
+JOIN Prescriptions Pr 
+ON P.UR_Number = Pr.Patient_UR_Number
+WHERE Pr.Doctor_Id = 1;
+
+GO
+---------------------------------------------------------------------------------
+--26.DELETE: Delete a patient from the Patient table.
+DELETE FROM Patients WHERE UR_Number=1;
+GO
+---------------------------------------------------------------------------------
+--27. Transaction: Insert a new doctor and a patient, ensuring both operations succeed or fail together.
+BEGIN TRANSACTION;
+    BEGIN TRY
+        INSERT INTO Doctors (Name, Specialty, Years_Of_Experience, Email, Phone)
+        VALUES ('Dr. New Doc', 'General', 5, 'new@doc.com', '123');
+
+        INSERT INTO Patients (Name, Age, Doctor_Id, Address)
+        VALUES ('New Patient', 40, @@IDENTITY, '12ST AL-Sahaba-6th of october');
+
+        COMMIT TRANSACTION;
+    END TRY
+
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Error occurred';
+    END CATCH;
+GO
+---------------------------------------------------------------------------------
+--28. View: Create a view that combines patient and doctor information for easy access.
+CREATE VIEW V_Patient_Details AS
+SELECT P.Name AS Patient, P.Address, D.Name AS Doctor, D.Specialty
+FROM Patients P
+JOIN Doctors D ON P.Doctor_Id = D.ID;
+GO
+---------------------------------------------------------------------------------
+--29. Index: Create an index on the 'phone' column of the Patient table to improve search performance.
+CREATE INDEX IDX_Patient_Phone ON Patients(Phone);
+GO
+---------------------------------------------------------------------------------
+--30. Backup: Perform a backup of the entire database to ensure data safety.
+BACKUP DATABASE Barwon_Health 
+TO DISK = 'C:\Backups\Barwon_Health.bak';
+GO
+---------------------------------------------------------------------------------
